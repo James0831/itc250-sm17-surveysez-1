@@ -33,10 +33,10 @@ date_format(s.DateAdded, '%W %D %M %Y %H:%i') 'DateAdded' from "
 ";
 
 #Fills <title> tag. If left empty will default to $PageTitle in config_inc.php  
-$config->titleTag = 'Muffins made with love & PHP in Seattle';
+$config->titleTag = 'Surveys made with PHP in Seattle';
 
 #Fills <meta> tags.  Currently we're adding to the existing meta tags in config_inc.php
-$config->metaDescription = 'Seattle Central\'s ITC280 Class Muffins are made with pure PHP! ' . $config->metaDescription;
+$config->metaDescription = 'Seattle Central\'s ITC250 Class! ' . $config->metaDescription;
 $config->metaKeywords = 'Muffins,PHP,Fun,Bran,Regular,Regular Expressions,'. $config->metaKeywords;
 
 /*
@@ -58,17 +58,14 @@ get_header(); #defaults to theme header or header_inc.php
 ?>
 <h3 align="center"><?=smartTitle();?></h3>
 
-<p>This page, along with <b>survey_view.php</b>, demonstrate a List/View web application.</p>
-<p>It was built on the mysql shared web application page, <b>demo_shared.php</b></p>
-<p>This page is the entry point of the application, meaning this page gets a link on your web site.  Since the current subject is muffins, we could name the link something clever like <a href="<?php echo VIRTUAL_PATH; ?>index.php">Muffins</a></p>
-<p>Use <b>index.php</b> and <b>survey_view.php</b> as a starting point for building your own List/View web application!</p> 
+<p></p> 
 <?php
 #reference images for pager
 $prev = '<img src="' . VIRTUAL_PATH . 'images/arrow_prev.gif" border="0" />';
 $next = '<img src="' . VIRTUAL_PATH . 'images/arrow_next.gif" border="0" />';
 
 # Create instance of new 'pager' class
-$myPager = new Pager(2,'',$prev,$next,'');
+$myPager = new Pager(10,'',$prev,$next,'');
 $sql = $myPager->loadSQL($sql);  #load SQL, add offset
 
 # connection comes first in mysqli (improved) function
