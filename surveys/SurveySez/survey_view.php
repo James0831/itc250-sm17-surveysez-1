@@ -17,7 +17,6 @@
  */
  
 require '../inc_0700/config_inc.php'; #provides configuration, pathing, error handling, db credentials
-//::(double colon) is used when useing a class name
 spl_autoload_register('MyAutoLoader::NamespaceLoader');//required to load SurveySez namespace objects
 $config->metaRobots = 'no index, no follow';#never index survey pages
 
